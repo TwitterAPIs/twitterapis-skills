@@ -29,7 +29,9 @@ This skill separates them first.
    - `is_reply: true` with `in_reply_to_status_id` pointing at the account's own
      tweet in the same `conversation_id` is a **thread continuation**.
    - `is_reply: true` to anyone else is a **reply**.
-   - everything else is an **original post**.
+   - everything else is an **original post**. A quote tweet (`is_quote: true`) is the
+     account's own post that embeds someone else's, so it counts as original; report
+     how many originals were quotes.
 4. **Measures originals only**, then reports.
 
 ## The measures

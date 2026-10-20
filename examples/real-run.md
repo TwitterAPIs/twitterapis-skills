@@ -13,8 +13,9 @@ GET /twitter/user/tweets?username=vercel
 
 The profile: Vercel, @vercel, 464,635 followers, following 10, joined 2016-01-01.
 
-The timeline page returned **17 items** (the endpoint's page size is advisory; X
-served 17 here) covering Sep 25 to Oct 19, with `has_more: true`.
+The timeline page returned **17 items** covering Sep 25 to Oct 19, with
+`has_more: true`. The page size is set by X, about 13 to 20 per page; a larger
+`count` is ignored.
 
 ## Classification
 
@@ -47,7 +48,7 @@ posts above 199,000 views, the bounty result and a sports-partnership post.
    of 22,531 views; the 14 originals give 46,072. Same account, same day, a 2x
    difference from one classification step. This is why the skill classifies
    before it measures.
-2. **The page is shorter than you asked for.** The request allowed up to 200 items
-   and X served 17. An audit that reads one page and calls it "the last 20 posts" is
+2. **A page is about 20 items, whatever you ask for.** X decides the page size, so
+   this page held 17. An audit that reads one page and calls it "the last 20 posts" is
    wrong about its own window. Report the dates the items actually span, and page
    with `next_cursor` until the window you agreed is covered.
